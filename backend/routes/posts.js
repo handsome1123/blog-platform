@@ -43,7 +43,7 @@ router.put('/:id', auth, async (req, res) => {
 router.delete('/:id', auth, async (req, res) => {
   const post = await Post.findById(req.params.id);
   if (post.author.toString() !== req.user.userId) return res.sendStatus(403);
-  await post.delete();
+  await post.deleteOne();
   res.json({ message: "Deleted" });
 });
 
