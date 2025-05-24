@@ -19,6 +19,7 @@ export default function Home() {
           <li key={post._id}>
             <Link to={`/post/${post._id}`}>
               <h3>{post.title}</h3>
+              {post.image && <img src={`http://localhost:5000${post.image}`} alt="Post" style={{ width: '100%', maxHeight: '300px' }} />}
               <p>by {post.author?.username}</p>
             </Link>
           </li>

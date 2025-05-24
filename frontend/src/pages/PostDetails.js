@@ -29,6 +29,7 @@ export default function PostDetails() {
   return (
     <div>
       <h2>{post.title}</h2>
+      {post.image && <img src={`http://localhost:5000${post.image}`} alt="Post" style={{ width: '100%', maxHeight: '300px' }} />}
       <p><i>by {post.author?.username}</i></p>
       <p>{post.content}</p>
       <button onClick={handleDelete}>Delete</button>

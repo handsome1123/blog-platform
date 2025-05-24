@@ -4,6 +4,20 @@ const Post = require('../models/Post');
 const User = require('../models/User');
 const router = express.Router();
 
+const multer = require("multer");
+const path = require("path");
+
+const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, "uploads/");
+  },
+  filename: function (req, file, cb) {
+    cb(null, Date.now() + path.extname(file.originalname));
+  },
+});
+const upload = multer({ storage });
+
+
 function auth(req, res, next) {
   const token = req.headers.authorization?.split(" ")[1];
   if (!token) return res.sendStatus(401);
@@ -15,11 +29,29 @@ function auth(req, res, next) {
   }
 }
 
-router.post('/', auth, async (req, res) => {
-  const post = new Post({ ...req.body, author: req.user.userId });
+// router.post('/', auth, async (req, res) => {
+//   const post = new Post({ ...req.body, author: req.user.userId });
+//   await post.save();
+//   res.json(post);
+// });
+
+router.post("/", auth, upload.single("image"), async (req, res) => {
+  const { title, content } = req.body;
+  const image = req.file ? `/uploads/${req.file.filename}` : "";
+
+  const post = new Post({
+    title,
+    content,
+    image,
+    author: req.user.userId,
+  });
+
   await post.save();
   res.json(post);
 });
+
+
+
 
 router.get('/', async (req, res) => {
   const posts = await Post.find().populate('author', 'username');
