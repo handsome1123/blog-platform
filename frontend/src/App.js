@@ -6,12 +6,20 @@ import NewPost from "./pages/NewPost";
 import PostDetails from "./pages/PostDetails";
 import Navbar from "./components/Navbar";
 
+import About from "./pages/About";
+import Blog from "./pages/Blog"; 
+
+import './assets/css/style.css'; // Ensure this path is correct
+
 function App() {
   return (
     <Router>
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/blog" element={<Blog />} />
+
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/new-post" element={<NewPost />} />
