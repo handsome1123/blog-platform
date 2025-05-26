@@ -2,23 +2,34 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
-import NewPost from "./pages/NewPost";
 import PostDetails from "./pages/PostDetails";
-import Navbar from "./components/Navbar";
+// import Navbar from "./components/Navbar";
 
+// Importing pages
 import About from "./pages/About";
 import Blog from "./pages/Blog"; 
+import Vlog from "./pages/Blog";
+import Contact from "./pages/Contact"; 
 
-import './assets/css/style.css'; // Ensure this path is correct
+// Admin routes
+import NewPost from "./pages/Admin/NewPost";
+
+
+import './assets/css/style.css'; 
 
 function App() {
   return (
     <Router>
-      <Navbar />
+      {/* <Navbar /> */}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/blog" element={<Blog />} />
+        <Route path="/vlogs" element={<Vlog />} />
+        <Route path="/contact" element={<Contact />} />
+
+        {/* Admin routes */}
+ 
 
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />

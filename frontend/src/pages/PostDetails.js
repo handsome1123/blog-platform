@@ -2,6 +2,10 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams, useNavigate } from "react-router-dom";
 
+
+import Header from '../components/Header';
+import Footer from '../components/Footer';
+
 export default function PostDetails() {
   const { id } = useParams();
   const [post, setPost] = useState(null);
@@ -28,11 +32,14 @@ export default function PostDetails() {
 
   return (
     <div>
+      <Header />
+
       <h2>{post.title}</h2>
-      {post.image && <img src={`http://localhost:5000${post.image}`} alt="Post" style={{ width: '100%', maxHeight: '300px' }} />}
+      {post.image && <img src={`http://localhost:5000${post.image}`} alt="Post"/>}
       <p><i>by {post.author?.username}</i></p>
       <p>{post.content}</p>
-      <button onClick={handleDelete}>Delete</button>
+      
+      <Footer />
     </div>
   );
 }

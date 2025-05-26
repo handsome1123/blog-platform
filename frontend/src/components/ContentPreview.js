@@ -1,25 +1,33 @@
-import React from 'react';
+import { useEffect, useState } from "react";
+import axios from "axios";
 import ContentCard from './ContentCard';
-import contentData from '../data/contentData'; // Import your data
 import './../assets/css/style.css';
 
 function ContentPreview() {
+  const [posts, setPosts] = useState([]);
+
+  useEffect(() => {
+    axios.get("http://localhost:5000/api/posts")
+      .then(res => setPosts(res.data))
+      .catch(err => console.error("Failed to fetch posts:", err));
+  }, []);
+
   return (
     <section className="content-preview">
       <div className="container">
         <h2 className="section-title" data-lang="discover">Discover More</h2>
         <div className="content-grid">
-          {contentData.map((item, index) => (
+          {posts.map(post => (
             <ContentCard
-              key={index} // In a real app, use a unique ID from your data
-              image={item.image}
-              altText={item.altText}
-              type={item.type}
-              title={item.title}
-              description={item.description}
-              link={item.link}
-              linkText={item.linkText}
-              isVideo={item.isVideo}
+              key={post._id}
+              imageUrl={post.image ? `http://localhost:5000${post.image}` : null}
+              altText={post.altText}
+              type={post.type}
+              title={post.title}
+              description={post.description}
+              link={`/post/${post._id}`}
+              linkText={post.linkText}
+              isVideo={post.isVideo}
             />
           ))}
         </div>

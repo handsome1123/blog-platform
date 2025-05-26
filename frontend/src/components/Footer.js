@@ -1,5 +1,7 @@
 import React from 'react';
 import './../assets/css/style.css';
+import '@fortawesome/fontawesome-free/css/all.min.css';
+
 
 function Footer() {
   return (
@@ -24,9 +26,9 @@ function Footer() {
             <h4 data-lang="get-in-touch">Get In Touch</h4>
             <p><i className="far fa-envelope"></i> hello@canttwait2say.com</p>
             <div className="footer-social">
-              <a href="https://www.youtube.com/your_channel_link" target="_blank" rel="noopener noreferrer"><i className="fab fa-youtube"></i></a>
+              <a href="https://www.youtube.com/@cantwait2say-d8p" target="_blank" rel="noopener noreferrer"><i className="fab fa-youtube"></i></a>
               <a href="https://www.facebook.com/cantwait2say" target="_blank" rel="noopener noreferrer"><i className="fab fa-facebook-f"></i></a>
-              <a href="https://www.tiktok.com/@YOUR_HANDLE" target="_blank" rel="noopener noreferrer"><i className="fab fa-tiktok"></i></a>
+              <a href="https://www.tiktok.com/@cantwait2say0" target="_blank" rel="noopener noreferrer"><i className="fab fa-tiktok"></i></a>
               <a href="https://www.instagram.com/YOUR_HANDLE" target="_blank" rel="noopener noreferrer"><i className="fab fa-instagram"></i></a>
             </div>
           </div>

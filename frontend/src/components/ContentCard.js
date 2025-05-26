@@ -1,18 +1,20 @@
 import React from 'react';
-import './../assets/css/style.css';
+import { Link } from 'react-router-dom';
 
-function ContentCard({ image, altText, type, title, description, link, linkText, isVideo }) {
+function ContentCard({ imageUrl, altText, type, title, description, link, linkText, isVideo }) {
   return (
     <div className="content-card">
-      <div className={`card-image ${isVideo ? 'video-thumbnail' : ''}`}>
-        <img src={image} alt={altText} />
-        {isVideo && <span className="play-icon"><i className="fas fa-play"></i></span>}
-      </div>
-      <div className="card-content">
-        <span className="content-type">{type}</span>
+      {imageUrl && <img src={imageUrl} alt={altText || title} className="content-image" />}
+      <div className="content-info">
+        {type && <span className="content-type">{type}</span>}
         <h3>{title}</h3>
         <p>{description}</p>
-        <a href={link} className="read-more">{linkText}</a>
+        {link && (
+          <Link to={link} className="content-link">
+            {linkText || 'Read More'}
+          </Link>
+        )}
+        {isVideo && <span className="video-badge">🎥 Video</span>}
       </div>
     </div>
   );
