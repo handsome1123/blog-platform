@@ -25,6 +25,7 @@ function ContentPreview() {
               type={post.type}
               title={post.title}
               description={post.description}
+              content={post.content}
               link={`/post/${post._id}`}
               linkText={post.linkText}
               isVideo={post.isVideo}

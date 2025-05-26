@@ -35,21 +35,6 @@ function auth(req, res, next) {
 //   res.json(post);
 // });
 
-router.post("/", auth, upload.single("image"), async (req, res) => {
-  const { title, content } = req.body;
-  const image = req.file ? `/uploads/${req.file.filename}` : "";
-
-  const post = new Post({
-    title,
-    content,
-    image,
-    author: req.user.userId,
-  });
-
-  await post.save();
-  res.json(post);
-});
-
 
 
 
@@ -63,14 +48,28 @@ router.get('/:id', async (req, res) => {
   res.json(post);
 });
 
-router.put('/:id', auth, async (req, res) => {
-  const post = await Post.findById(req.params.id);
-  if (post.author.toString() !== req.user.userId) return res.sendStatus(403);
-  post.title = req.body.title;
-  post.content = req.body.content;
-  await post.save();
-  res.json(post);
+router.post("/", auth, upload.single("image"), async (req, res) => {
+  const { title, content, description, type, videoUrl } = req.body;
+  const image = req.file ? `/uploads/${req.file.filename}` : "";
+
+  try {
+    const post = new Post({
+      title,
+      description,
+      content,
+      type: type || "Blog",
+      videoUrl: videoUrl || "",
+      image,
+      author: req.user.userId,
+    });
+
+    await post.save();
+    res.status(201).json(post);
+  } catch (err) {
+    res.status(500).json({ error: "Failed to create post" });
+  }
 });
+
 
 router.delete('/:id', auth, async (req, res) => {
   const post = await Post.findById(req.params.id);

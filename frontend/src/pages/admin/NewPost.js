@@ -4,8 +4,12 @@ import { useNavigate } from "react-router-dom";
 
 export default function NewPost() {
   const [title, setTitle] = useState("");
+  const [description, setDescription] = useState("");
   const [content, setContent] = useState("");
+  const [type, setType] = useState("Blog"); // Blog or Video
+  const [videoUrl, setVideoUrl] = useState("");
   const [image, setImage] = useState(null);
+
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
@@ -14,7 +18,10 @@ export default function NewPost() {
     const token = localStorage.getItem("token");
     const formData = new FormData();
     formData.append("title", title);
+    formData.append("description", description);
     formData.append("content", content);
+    formData.append("type", type);
+    if (videoUrl) formData.append("videoUrl", videoUrl);
     if (image) formData.append("image", image);
 
     try {
@@ -24,31 +31,64 @@ export default function NewPost() {
           "Content-Type": "multipart/form-data",
         },
       });
-      navigate("/");
+      navigate("/admin/posts"); // or wherever you manage posts
     } catch (err) {
       alert("Failed to create post");
     }
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <h2>New Post</h2>
+    <form onSubmit={handleSubmit} style={{ maxWidth: 600, margin: "auto" }}>
+      <h2>Create New Post</h2>
+
+      <label>Title</label>
       <input
         type="text"
-        placeholder="Title"
         value={title}
         onChange={(e) => setTitle(e.target.value)}
-      /><br />
+        required
+      />
+
+      <label>Description (short summary)</label>
       <textarea
-        placeholder="Content"
+        value={description}
+        onChange={(e) => setDescription(e.target.value)}
+        required
+      />
+
+      <label>Content (full post)</label>
+      <textarea
+        rows={10}
         value={content}
         onChange={(e) => setContent(e.target.value)}
-      /><br />
+        required
+      />
+
+      <label>Type</label>
+      <select value={type} onChange={(e) => setType(e.target.value)}>
+        <option value="Blog">Blog</option>
+        <option value="Video">Video</option>
+      </select>
+
+      {type === "Video" && (
+        <>
+          <label>Video URL</label>
+          <input
+            type="text"
+            value={videoUrl}
+            onChange={(e) => setVideoUrl(e.target.value)}
+            placeholder="e.g. https://www.youtube.com/watch?v=..."
+          />
+        </>
+      )}
+
+      <label>Upload Image</label>
       <input
         type="file"
         accept="image/*"
         onChange={(e) => setImage(e.target.files[0])}
-      /><br />
+      />
+
       <button type="submit">Post</button>
     </form>
   );

@@ -3,7 +3,7 @@ import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import PostDetails from "./pages/PostDetails";
-// import Navbar from "./components/Navbar";
+import Navbar from "./components/Navbar";
 
 // Importing pages
 import About from "./pages/About";
@@ -20,7 +20,7 @@ import './assets/css/style.css';
 function App() {
   return (
     <Router>
-      {/* <Navbar /> */}
+      <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
