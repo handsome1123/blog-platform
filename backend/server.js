@@ -14,8 +14,11 @@ app.use("/uploads", express.static("uploads"));
 
 
 mongoose.connect(process.env.MONGO_URI)
-    .then(() => console.log("MongoDB connected"))
+    .then(() => console.log("MongoDB connected!"))
     .catch(err => console.log(err));
+
+const adminRoutes = require('./routes/admin');
+app.use('/api/admin', adminRoutes);
 
 const authRoutes = require('./routes/auth');
 app.use('/api/auth', authRoutes);

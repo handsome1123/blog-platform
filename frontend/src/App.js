@@ -28,7 +28,7 @@ function App() {
         <Route path="/blog" element={<Blog />} />
         <Route path="/vlogs" element={<Vlog />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/posts/:postId" element={<PostDetails />} />
+        <Route path="/posts/:id" element={<PostDetails />} />
 
         {/* Admin routes */}
         <Route path="/admin/dashboard" element={<AdminDashboard />} />
