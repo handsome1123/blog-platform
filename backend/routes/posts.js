@@ -2,8 +2,8 @@ const express = require('express');
 const router = express.Router();
 const Post = require('../models/Post');
 // const upload = require('../middleware/upload'); // for image uploads
-// const auth = require('../middleware/auth');     // for protected routes
-
+// const auth = require('../middleware/auth'); 
+    
 // Public - Get All Posts
 router.get("/", async (req, res) => {
   try {
@@ -41,7 +41,7 @@ router.get("/:id", async (req, res) => {
 //   res.json(post);
 // });
 
-// // Protected - Update Post
+// // // Protected - Update Post
 // router.put("/:id", auth, async (req, res) => {
 //   const post = await Post.findById(req.params.id);
 //   if (post.author.toString() !== req.user.userId) return res.sendStatus(403);

@@ -13,6 +13,9 @@ import Contact from "./pages/Contact";
 
 // Admin routes
 import AdminDashboard from "./pages/Admin/AdminDashboard";
+import Users from "./pages/Admin/Users";
+import Posts from "./pages/Admin/Posts";
+import Settings from "./pages/Admin/Settings"; 
 import NewPost from "./pages/Admin/NewPost";
 
 
@@ -32,6 +35,12 @@ function App() {
 
         {/* Admin routes */}
         <Route path="/admin/dashboard" element={<AdminDashboard />} />
+        <Route path="/admin/users" element={<Users />} />
+        <Route path="/admin/posts" element={<Posts />} />
+        <Route path="/admin/settings" element={<Settings />} />
+        
+        {/* New Post route for admin */}
+        <Route path="/admin/new-post" element={<NewPost />} />
         
         {/* User routes */}
 
