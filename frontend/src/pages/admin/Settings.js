@@ -1,12 +1,11 @@
-import Sidebar from '../../components/admin/AdminSidebar';
+import React from 'react';
+import AdminLayout from '../../components/admin/AdminLayout';
 
-export default function Settings() {
+export default function AdminDashboard() {
   return (
-    <div>
-      <Sidebar />
-      <main>
-
-      </main>
-    </div>
+    <AdminLayout>
+      <h1>Welcome to Admin Settings</h1>
+      <p>Use the sidebar to navigate between sections.</p>
+    </AdminLayout>
   );
 }

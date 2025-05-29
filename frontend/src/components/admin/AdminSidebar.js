@@ -9,7 +9,7 @@ const links = [
   { label: 'Settings', icon: FaCog, path: '/admin/settings' },
 ];
 
-export default function AdminSidebar() {
+export default function AdminSidebar({children}) {
   const location = useLocation();
 
   return (

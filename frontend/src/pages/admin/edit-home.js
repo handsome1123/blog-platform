@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import EditableHeroBanner from '../../components/EditableHeroBanner';
 import EditableContentPreview from '../../components/EditableContentPreview';
 import EditableLatestVideo from '../../components/EditableLatestVideo';
+import AdminLayout from '../../components/admin/AdminLayout';
 
 export default function EditHome() {
   const [data, setData] = useState(null);
@@ -29,14 +30,16 @@ export default function EditHome() {
 
   return (
     <div>
-      <h1 style={{ padding: '1rem' }}>Edit Homepage</h1>
-      <EditableHeroBanner data={data} onChange={handleChange} />
-      <EditableContentPreview data={data} onChange={handleChange} />
-      <EditableLatestVideo data={data} onChange={handleChange} />
+      <AdminLayout>
+        <h1 style={{ padding: '1rem' }}>Edit Homepage</h1>
+        <EditableHeroBanner data={data} onChange={handleChange} />
+        <EditableContentPreview data={data} onChange={handleChange} />
+        <EditableLatestVideo data={data} onChange={handleChange} />
 
-      <div style={{ padding: '1rem' }}>
-        <button onClick={handleSave}>💾 Save Changes</button>
-      </div>
+        <div style={{ padding: '1rem' }}>
+          <button onClick={handleSave}>💾 Save Changes</button>
+        </div>
+      </AdminLayout>
     </div>
   );
 }
