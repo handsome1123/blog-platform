@@ -10,6 +10,7 @@ import About from "./pages/About";
 import Blog from "./pages/Blog"; 
 import Vlog from "./pages/Blog";
 import Contact from "./pages/Contact"; 
+// import Home2 from "./pages/Home2";
 
 // Admin routes
 import AdminDashboard from "./pages/Admin/AdminDashboard";
@@ -17,6 +18,8 @@ import Users from "./pages/Admin/Users";
 import Posts from "./pages/Admin/Posts";
 import Settings from "./pages/Admin/Settings"; 
 import NewPost from "./pages/Admin/NewPost";
+
+import EditHomePage from "./pages/Admin/edit-home";
 
 
 import './assets/css/style.css'; 
@@ -32,6 +35,8 @@ function App() {
         <Route path="/vlogs" element={<Vlog />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/posts/:id" element={<PostDetails />} />
+        {/* <Route path="/home2" element={<Home2 />} /> */}
+
 
         {/* Admin routes */}
         <Route path="/admin/dashboard" element={<AdminDashboard />} />
@@ -41,7 +46,8 @@ function App() {
         
         {/* New Post route for admin */}
         <Route path="/admin/new-post" element={<NewPost />} />
-        
+        <Route path="/admin/edit-home" element={<EditHomePage />} />
+
         {/* User routes */}
 
         <Route path="/login" element={<Login />} />

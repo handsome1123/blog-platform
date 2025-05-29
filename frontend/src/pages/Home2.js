@@ -1,11 +1,9 @@
 import { useEffect, useState } from 'react';
-import Header from '../components/Header';
 import HeroBanner from '../components/HeroBanner';
 import LatestVideo from '../components/LatestVideo';
-import ContentPreview from '../components/ContentPreview'; // We'll create this
+import ContentPreview from '../components/ContentPreview';
 import SocialShowcase from '../components/SocialShowcase';
 import Footer from '../components/Footer';
-
 
 export default function Home() {
   const [data, setData] = useState(null);
@@ -21,7 +19,6 @@ export default function Home() {
 
   return (
     <>
-      <Header />
       <HeroBanner data={data} />
       <LatestVideo data={data} />
       <ContentPreview data={data} />

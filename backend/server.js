@@ -26,6 +26,9 @@ app.use('/api/auth', authRoutes);
 const postRoutes = require('./routes/posts');
 app.use('/api/posts', postRoutes);
 
+const homepageRoutes = require('./routes/homepage');
+app.use('/api/homepage', homepageRoutes);
+
 
 app.get('/', (req, res) => res.send("Blog API running"));
 
