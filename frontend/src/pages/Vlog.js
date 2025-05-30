@@ -1,21 +1,30 @@
-import React from 'react';
+import { useEffect, useState } from 'react';
 import Header from '../components/Header';
 import HeroBanner from '../components/HeroBanner';
-import VlogVideo from '../components/VlogVideo';
 import RelatedVlogs from '../components/RelatedVlogs';
 import SocialShowcase from '../components/SocialShowcase';
+import LatestVideo from '../components/LatestVideo';
 import Footer from '../components/Footer';
 
 const Vlog = () => {
+
+    const [data, setData] = useState(null);
+  
+    useEffect(() => {
+      fetch('http://localhost:5000/api/homepage') // Replace with your backend API
+        .then((res) => res.json())
+        .then(setData)
+        .catch((err) => console.error('Failed to load homepage data', err));
+    }, []);
+  
+    if (!data) return <p>Loading homepage...</p>;
+
   return (
     <>
       <Header />
-      <HeroBanner
-        title="Welcome to My Vlog"
-        subtitle="Latest adventures and stories"
-      />
+      <HeroBanner data={data}/>
       <main>
-        <VlogVideo />
+        <LatestVideo data={data} />
         <RelatedVlogs />
         <SocialShowcase />
       </main>

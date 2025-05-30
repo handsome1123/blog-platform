@@ -2,9 +2,9 @@ import React from 'react';
 
 const VlogVideo = () => {
   return (
-    <section className="vlog-details">
-      <div className="container">
-        <div className="video-container">
+    <section class="vlog-details">
+      <div class="container">
+        <div class="video-container">
           <iframe
             src="https://www.youtube.com/embed/dQw4w9WgXcQ"
             frameBorder="0"
@@ -13,7 +13,7 @@ const VlogVideo = () => {
             title="Vlog Video"
           ></iframe>
         </div>
-        <div className="vlog-description">
+        <div class="vlog-description">
           <h2>My Latest Adventure in the Mountains</h2>
           <p>
             Join me on this journey as I explore the breathtaking mountain views, hike through scenic trails,

@@ -4,12 +4,13 @@ import HeroBanner from '../components/HeroBanner';
 import ContactSection from '../components/ContactSection';
 import Footer from '../components/Footer';
 import '../assets/css/style.css';
+import { data } from 'react-router-dom';
 
 const Contact = () => {
   return (
     <>
       <Header />
-      <HeroBanner />
+      <HeroBanner data={data} />
       <main>
         <ContactSection />
       </main>

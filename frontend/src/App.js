@@ -8,7 +8,7 @@ import PostDetails from "./pages/PostDetails";
 // Importing pages
 import About from "./pages/About";
 import Blog from "./pages/Blog"; 
-import Vlog from "./pages/Blog";
+import Vlog from "./pages/Vlog";
 import Contact from "./pages/Contact"; 
 // import Home2 from "./pages/Home2";
 

@@ -9,7 +9,7 @@ export default function AdminLayout({ children }) {
   const menuItems = [
     { label: 'Dashboard', icon: '🏠', path: '/admin/dashboard' },
     { label: 'Pages', icon: '✍️', path: '/admin/pages' },
-    { label: 'Pages', icon: '✍️', path: '/admin/pages' },
+    { label: 'Posts', icon: '📝', path: '/admin/posts' },
     { label: 'Settings', icon: '⚙️', path: '/admin/settings' },
   ];
 
