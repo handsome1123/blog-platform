@@ -1,14 +1,9 @@
-
-
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import PostDetails from "./pages/PostDetails";
 // import Navbar from "./components/Navbar";
-
-
-
 
 // Importing pages
 import About from "./pages/About";
@@ -23,8 +18,10 @@ import AdminDashboard from "./pages/Admin/AdminDashboard";
 import Pages from "./pages/Admin/Pages";
 import Settings from "./pages/Admin/Settings"; 
 import NewPost from "./pages/Admin/NewPost";
+import Posts from "./pages/Admin/Posts";
 
 import EditHomePage from "./pages/Admin/edit-home";
+
 
 
 import './assets/css/style.css'; 
@@ -53,6 +50,7 @@ function App() {
         {/* New Post route for admin */}
         <Route path="/admin/new-post" element={<NewPost />} />
         <Route path="/admin/edit-home" element={<EditHomePage />} />
+        <Route path="/admin/posts" element={<Posts />} />
 
         {/* User routes */}
 

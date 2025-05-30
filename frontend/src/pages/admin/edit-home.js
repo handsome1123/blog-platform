@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import EditableHeroBanner from '../../components/EditableHeroBanner';
 import EditableContentPreview from '../../components/EditableContentPreview';
 import EditableLatestVideo from '../../components/EditableLatestVideo';
+import AddNewPost from '../../components/AddNewPost';
 import AdminLayout from '../../components/admin/AdminLayout';
 
 export default function EditHome() {
@@ -35,6 +36,9 @@ export default function EditHome() {
         <EditableHeroBanner data={data} onChange={handleChange} />
         <EditableContentPreview data={data} onChange={handleChange} />
         <EditableLatestVideo data={data} onChange={handleChange} />
+        <AddNewPost data={data} onChange={handleChange} />
+        
+        {/* Save button at the bottom */}
 
         <div style={{ padding: '1rem' }}>
           <button onClick={handleSave}>💾 Save Changes</button>

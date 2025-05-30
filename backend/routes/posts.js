@@ -1,8 +1,24 @@
 const express = require('express');
 const router = express.Router();
+const multer = require("multer");
 const Post = require('../models/Post');
-// const upload = require('../middleware/upload'); // for image uploads
-// const auth = require('../middleware/auth'); 
+const path = require("path");
+const fs = require('fs');
+
+// Multer setup
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    const uploadPath = path.join(__dirname, '../uploads');
+    if (!fs.existsSync(uploadPath)) {
+      fs.mkdirSync(uploadPath);
+    }
+    cb(null, uploadPath);
+  },
+  filename: (req, file, cb) => {
+    cb(null, Date.now() + '-' + file.originalname);
+  },
+});
+const upload = multer({ storage });
     
 // Public - Get All Posts
 router.get("/", async (req, res) => {
@@ -25,30 +41,35 @@ router.get("/:id", async (req, res) => {
   }
 });
 
-// // Protected - Create Post
-// router.post("/", auth, upload.single("image"), async (req, res) => {
-//   const { title, content } = req.body;
-//   const image = req.file ? `/uploads/${req.file.filename}` : "";
+// POST /api/posts - Create new post with optional image upload
+router.post('/', upload.single('image'), async (req, res) => {
+  try {
+    const { title, description, content, type, videoUrl } = req.body;
+    if (!title || !description || !content) {
+      return res.status(400).json({ error: 'Title, description, and content are required' });
+    }
 
-//   const post = new Post({
-//     title,
-//     content,
-//     image,
-//     author: req.user.userId,
-//   });
+    // Simple slug generation
+    const slug = title.toLowerCase().replace(/\s+/g, '-').replace(/[^\w-]+/g, '');
 
-//   await post.save();
-//   res.json(post);
-// });
+    const newPost = new Post({
+      title,
+      description,
+      content,
+      type: type || 'Blog',
+      slug,
+      videoUrl: type === 'Video' ? videoUrl : undefined,
+      image: req.file ? req.file.filename : undefined,
+      author: req.user ? req.user._id : null, // adapt if you have auth
+    });
 
-// // // Protected - Update Post
-// router.put("/:id", auth, async (req, res) => {
-//   const post = await Post.findById(req.params.id);
-//   if (post.author.toString() !== req.user.userId) return res.sendStatus(403);
-//   post.title = req.body.title;
-//   post.content = req.body.content;
-//   await post.save();
-//   res.json(post);
-// });
+    await newPost.save();
+    res.status(201).json({ message: 'Post created', post: newPost });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: 'Server error' });
+  }
+});
+
 
 module.exports = router;
