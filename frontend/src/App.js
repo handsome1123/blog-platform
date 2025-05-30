@@ -1,9 +1,14 @@
+
+
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import PostDetails from "./pages/PostDetails";
 // import Navbar from "./components/Navbar";
+
+
+
 
 // Importing pages
 import About from "./pages/About";
@@ -14,8 +19,8 @@ import Contact from "./pages/Contact";
 
 // Admin routes
 import AdminDashboard from "./pages/Admin/AdminDashboard";
-import Users from "./pages/Admin/Users";
-import Posts from "./pages/Admin/Posts";
+// import Users from "./pages/Admin/Users";
+import Pages from "./pages/Admin/Pages";
 import Settings from "./pages/Admin/Settings"; 
 import NewPost from "./pages/Admin/NewPost";
 
@@ -40,9 +45,10 @@ function App() {
 
         {/* Admin routes */}
         <Route path="/admin/dashboard" element={<AdminDashboard />} />
-        <Route path="/admin/users" element={<Users />} />
-        <Route path="/admin/posts" element={<Posts />} />
+        {/* <Route path="/admin/users" element={<Users />} /> */}
+        <Route path="/admin/pages" element={<Pages />} />
         <Route path="/admin/settings" element={<Settings />} />
+        {/* <Route path="/admin/logout" element={<AdminLogout />} /> */}
         
         {/* New Post route for admin */}
         <Route path="/admin/new-post" element={<NewPost />} />
