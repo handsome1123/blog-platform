@@ -21,6 +21,10 @@ import NewPost from "./pages/Admin/NewPost";
 import Posts from "./pages/Admin/Posts";
 
 import EditHomePage from "./pages/Admin/edit-home";
+import EditAboutPage from "./pages/Admin/edit-about";
+import EditBlogPage from "./pages/Admin/edit-blog";
+import EditVlogPage from "./pages/Admin/edit-vlog";
+
 
 
 
@@ -51,6 +55,9 @@ function App() {
         <Route path="/admin/new-post" element={<NewPost />} />
         <Route path="/admin/edit-home" element={<EditHomePage />} />
         <Route path="/admin/posts" element={<Posts />} />
+        <Route path="/admin/edit-about" element={<EditAboutPage />} />
+        <Route path="/admin/edit-blog" element={<EditBlogPage />} />
+        <Route path="/admin/edit-vlog" element={<EditVlogPage />} />  
 
         {/* User routes */}
 

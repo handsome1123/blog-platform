@@ -6,7 +6,12 @@ export default function AdminDashboard() {
     <AdminLayout>
       <h1>Welcome to Pages</h1>
       <p>Use the sidebar to navigate between sections.</p>
-      <a href="/admin/edit-home">HOME PAGE</a>
+      <ul>
+        <li><a href="/admin/edit-home">HOME PAGE</a></li>
+        <li><a href="/admin/edit-about">ABOUT US PAGE</a></li>
+        <li><a href="/admin/edit-blog">BLOG PAGE</a></li>
+        <li><a href="/admin/edit-vlog">VLOG PAGE</a></li>
+      </ul>
     </AdminLayout>
   );
 }
