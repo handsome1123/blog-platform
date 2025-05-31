@@ -13,18 +13,19 @@ export default function AdminLayout({ children }) {
     { label: 'Settings', icon: '⚙️', path: '/admin/settings' },
   ];
 
-  const handleLogout = async () => {
+    const handleLogout = async () => {
     try {
-      await axios.post(
-        'http://localhost:5000/api/auth/logout',
-        {},
-        { withCredentials: true }
-      );
-
+      await fetch('http://localhost:5000/api/auth/logout', {
+        method: 'POST',
+        credentials: 'include', // ensures cookies like adminToken are sent
+      });
+      // Optional: also clear localStorage token if you're using one
       localStorage.removeItem('token');
-      navigate('/login');
-    } catch (error) {
-      console.error('Logout error:', error);
+
+      // Redirect to login
+      window.location.href = '/login';
+    } catch (err) {
+      console.error('Logout failed', err);
     }
   };
 

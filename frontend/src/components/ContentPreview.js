@@ -18,10 +18,10 @@ function ContentPreview() {
   }, []);
 
   return (
-    <section className="content-preview">
-      <div className="container">
-        <h2 className="section-title" data-lang="discover">Discover More</h2>
-        <div className="content-grid">
+    <section class="content-preview">
+      <div class="container">
+        <h2 class="section-title" data-lang="discover">Discover More</h2>
+        <div class="content-grid">
           {posts.map((post) => (
             <ContentCard
               key={post._id}

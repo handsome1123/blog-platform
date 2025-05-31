@@ -15,44 +15,44 @@ function Header() {
   };
 
   return (
-    <header className="site-header">
-      <div className="container">
-        <div className="logo">
+    <header class="site-header">
+      <div class="container">
+        <div class="logo">
           <a href="/">
-            <img src="/logo.jpg" alt="Logo" className="logo-image" style={{ width: '70px', height: '70px' }} />
+            <img src="/logo.jpg" alt="Logo" class="logo-image" style={{ width: '70px', height: '70px' }} />
           </a>
         </div>
-        <nav className="main-nav">
+        <nav class="main-nav">
           <button
-            className="mobile-menu-toggle"
+            class="mobile-menu-toggle"
             aria-label="Toggle menu"
             onClick={toggleMobileMenu} // ← add this
           >
-            <span className="bar"></span>
-            <span className="bar"></span>
-            <span className="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
           </button>
 
-          <ul className={`nav-links ${isMobileMenuOpen ? 'active' : ''}`}>
+          <ul class={`nav-links ${isMobileMenuOpen ? 'active' : ''}`}>
 
             <li>
-              <NavLink to="/" className={({ isActive }) => (isActive ? 'active' : '')}>Home</NavLink>
+              <NavLink to="/" class={({ isActive }) => (isActive ? 'active' : '')}>Home</NavLink>
             </li>
             <li>
-              <NavLink to="/about" className={({ isActive }) => (isActive ? 'active' : '')}>About Us</NavLink>
+              <NavLink to="/about" class={({ isActive }) => (isActive ? 'active' : '')}>About Us</NavLink>
             </li>
             <li>
-              <NavLink to="/blog" className={({ isActive }) => (isActive ? 'active' : '')}>Blog</NavLink>
+              <NavLink to="/blog" class={({ isActive }) => (isActive ? 'active' : '')}>Blog</NavLink>
             </li>
             <li>
-              <NavLink to="/vlogs" className={({ isActive }) => (isActive ? 'active' : '')}>Vlogs</NavLink>
+              <NavLink to="/vlogs" class={({ isActive }) => (isActive ? 'active' : '')}>Vlogs</NavLink>
             </li>
             <li>
-              <NavLink to="/contact" className={({ isActive }) => (isActive ? 'active' : '')}>Contact</NavLink>
+              <NavLink to="/contact" class={({ isActive }) => (isActive ? 'active' : '')}>Contact</NavLink>
             </li>
           </ul>
         </nav>
-        {/* <button id="language-toggle" className="lang-toggle" onClick={handleLanguageToggle}>
+        {/* <button id="language-toggle" class="lang-toggle" onClick={handleLanguageToggle}>
           မြန်မာ
         </button> */}
       </div>

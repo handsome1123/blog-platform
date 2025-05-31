@@ -15,7 +15,7 @@ export default function AdminSidebar({children}) {
   return (
     <aside className="admin-sidebar">
       <h1 className="admin-sidebar-title">Admin Panel</h1>
-      <ul className="admin-sidebar-nav">
+      <ul className="admin-sidebar-nav"> 
         {links.map(({ label, icon: Icon, path }) => (
           <li key={path}>
             <Link
