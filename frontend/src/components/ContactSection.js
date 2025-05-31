@@ -7,6 +7,7 @@ const ContactSection = () => (
     <p class="section-description">Any questions or remarks? Just write us a message!</p>
 
     <div class="contact-content">
+      
       <div class="contact-info">
         <h3 class="info-title">Contact Information</h3>
         <p class="info-description">Fill up the form and our Team will get back to you within 24 hours</p>
