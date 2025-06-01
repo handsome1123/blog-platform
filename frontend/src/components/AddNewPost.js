@@ -170,7 +170,7 @@ export default function NewPost() {
         <label style={{ fontWeight: "600", color: "#555" }}>Upload Image</label>
         <input
           type="file"
-          accept="image/*"
+          accept="image/*,video/*"
           onChange={(e) => setImage(e.target.files[0])}
           style={{ fontSize: "1rem" }}
         />

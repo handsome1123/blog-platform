@@ -26,15 +26,16 @@ function ContentPreview() {
             <ContentCard
               key={post._id}
               imageUrl={post.image ? `http://localhost:5000${post.image}` : null}
-              altText={post.altText || post.title}
-              type={post.type || "Article"}
+              altText={post.title}
+              type={post.type}
               title={post.title}
-              description={post.description || ""}
               content={post.content}
               link={`/posts/${post._id}`}
-              linkText={post.linkText || (post.isVideo ? "Watch Now" : "Read More")}
-              isVideo={post.isVideo || false}
+              linkText={post.type === 'Video' ? 'Watch Now' : 'Read More'}
+              isVideo={post.type === 'Video'}
+              videoUrl={post.videoUrl}
             />
+
           ))}
         </div>
       </div>
