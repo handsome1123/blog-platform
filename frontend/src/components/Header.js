@@ -9,10 +9,7 @@ function Header() {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
-  // You might want to implement language toggle logic here or in a higher-level context
-  const handleLanguageToggle = () => {
-    alert("Language toggle functionality to be implemented!");
-  };
+
 
   return (
     <header class="site-header">

@@ -1,6 +1,4 @@
 // src/components/AboutHero.js
-import React from 'react';
-import aboutImage from '../assets/images/about-us.jpg';
 
 const AboutHero = () => {
   return (

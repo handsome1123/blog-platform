@@ -1,10 +1,9 @@
-import React, { useState } from 'react';
-import { NavLink, useNavigate } from 'react-router-dom';
-import axios from 'axios';
+import { useState } from 'react';
+import { NavLink } from 'react-router-dom';
+
 
 export default function AdminLayout({ children }) {
   const [sidebarOpen, setSidebarOpen] = useState(true);
-  const navigate = useNavigate();
 
   const menuItems = [
     { label: 'Dashboard', icon: '🏠', path: '/admin/dashboard' },

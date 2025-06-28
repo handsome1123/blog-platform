@@ -1,8 +1,4 @@
 // src/components/TeamSection.js
-import React from 'react';
-import TeamMemberCard from './TeamMemberCard';
-import teamData from '../data/teamData';
-
 const TeamSection = () => {
   return (
     <section class="team-section">
