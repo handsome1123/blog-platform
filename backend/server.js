@@ -7,7 +7,7 @@ const path = require("path");
 
 
 const app = express();
-app.use(cors()); 
+app.use(cors({ origin: 'https://cantwait2say.vercel.app/' }));
 app.use(express.json());
 // Serve uploaded images statically
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
