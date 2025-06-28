@@ -15,15 +15,15 @@ import Contact from "./pages/Contact";
 
 // import ADashboard from './pages/Admin/ADashboard';
 // import Users from "./pages/Admin/Users";
-import Pages from "./pages/Admin/Pages";
-import Settings from "./pages/Admin/Settings"; 
-import NewPost from "./pages/Admin/NewPost";
-import Posts from "./pages/Admin/Posts";
+// import Pages from "./pages/Admin/Pages";
+// import Settings from "./pages/Admin/Settings"; 
+// import NewPost from "./pages/Admin/NewPost";
+// import Posts from "./pages/Admin/Posts";
 
-import EditHomePage from "./pages/Admin/edit-home";
-import EditAboutPage from "./pages/Admin/edit-about";
-import EditBlogPage from "./pages/Admin/edit-blog";
-import EditVlogPage from "./pages/Admin/edit-vlog";
+// import EditHomePage from "./pages/Admin/edit-home";
+// import EditAboutPage from "./pages/Admin/edit-about";
+// import EditBlogPage from "./pages/Admin/edit-blog";
+// import EditVlogPage from "./pages/Admin/edit-vlog";
 
 
 
