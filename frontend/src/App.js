@@ -12,7 +12,7 @@ import Vlog from "./pages/Vlog";
 import Contact from "./pages/Contact"; 
 // import Home2 from "./pages/Home2";
 
-// Admin routes
+
 import ADashboard from './pages/Admin/ADashboard';
 // import Users from "./pages/Admin/Users";
 import Pages from "./pages/Admin/Pages";
