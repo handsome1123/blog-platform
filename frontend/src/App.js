@@ -45,25 +45,25 @@ function App() {
 
 
         {/* Admin routes */}
-        <Route path="/admin/dashboard" element={<ADashboard />} />
+        {/* <Route path="/admin/dashboard" element={<ADashboard />} /> */}
         {/* <Route path="/admin/users" element={<Users />} /> */}
-        <Route path="/admin/pages" element={<Pages />} />
-        <Route path="/admin/settings" element={<Settings />} />
+        {/* <Route path="/admin/pages" element={<Pages />} /> */}
+        {/* <Route path="/admin/settings" element={<Settings />} /> */}
         {/* <Route path="/admin/logout" element={<AdminLogout />} /> */}
         
         {/* New Post route for admin */}
-        <Route path="/admin/new-post" element={<NewPost />} />
-        <Route path="/admin/edit-home" element={<EditHomePage />} />
-        <Route path="/admin/posts" element={<Posts />} />
-        <Route path="/admin/edit-about" element={<EditAboutPage />} />
-        <Route path="/admin/edit-blog" element={<EditBlogPage />} />
-        <Route path="/admin/edit-vlog" element={<EditVlogPage />} />  
+        {/* <Route path="/admin/new-post" element={<NewPost />} /> */}
+        {/* <Route path="/admin/edit-home" element={<EditHomePage />} /> */}
+        {/* <Route path="/admin/posts" element={<Posts />} /> */}
+        {/* <Route path="/admin/edit-about" element={<EditAboutPage />} /> */}
+        {/* <Route path="/admin/edit-blog" element={<EditBlogPage />} /> */}
+        {/* <Route path="/admin/edit-vlog" element={<EditVlogPage />} />   */}
 
         {/* User routes */}
 
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/new-post" element={<NewPost />} />
+        {/* <Route path="/new-post" element={<NewPost />} /> */}
         <Route path="/post/:id" element={<PostDetails />} />
       </Routes>
     </Router>
