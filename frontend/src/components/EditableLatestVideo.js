@@ -10,8 +10,8 @@ export default function EditableHeroBanner({ data, onChange }) {
   };
 
   useEffect(() => {
-    onChange({ ...data, latestVideoUrl: videoUrl });
-  }, [videoUrl]);
+  onChange({ ...data, latestVideoUrl: videoUrl });
+}, [videoUrl, data, onChange]);
 
   return (
     <section style={{ padding: '2rem', background: '#f4f4f4' }}>

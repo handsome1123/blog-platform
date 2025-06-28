@@ -9,7 +9,7 @@ export default function BlogContent() {
           {/* Blog Post 1 */}
           <div className="blog-post">
             <div className="post-image">
-              <img src="your-image1.jpg" alt="Post Image" />
+              <img src="your-image1.jpg" alt="Scenic mountain landscape" />
             </div>
             <div className="post-details">
               <h3><a href="/blog/post-1">Blog Post Title 1</a></h3>
@@ -24,7 +24,7 @@ export default function BlogContent() {
           {/* Blog Post 2 */}
           <div className="blog-post">
             <div className="post-image">
-              <img src="your-image2.jpg" alt="Post Image" />
+              <img src="your-image2.jpg" alt="Modern city skyline at night" />
             </div>
             <div className="post-details">
               <h3><a href="/blog/post-2">Blog Post Title 2</a></h3>
@@ -39,7 +39,7 @@ export default function BlogContent() {
           {/* Blog Post 3 */}
           <div className="blog-post">
             <div className="post-image">
-              <img src="your-image3.jpg" alt="Post Image" />
+              <img src="your-image3.jpg" alt="Person reading a book with coffee" />
             </div>
             <div className="post-details">
               <h3><a href="/blog/post-3">Blog Post Title 3</a></h3>
