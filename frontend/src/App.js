@@ -13,7 +13,7 @@ import Contact from "./pages/Contact";
 // import Home2 from "./pages/Home2";
 
 // Admin routes
-import AdminDashboard from './pages/Admin/ADashboard';
+import ADashboard from './pages/Admin/ADashboard';
 // import Users from "./pages/Admin/Users";
 import Pages from "./pages/Admin/Pages";
 import Settings from "./pages/Admin/Settings"; 
@@ -45,7 +45,7 @@ function App() {
 
 
         {/* Admin routes */}
-        <Route path="/admin/dashboard" element={<AdminDashboard />} />
+        <Route path="/admin/dashboard" element={<ADashboard />} />
         {/* <Route path="/admin/users" element={<Users />} /> */}
         <Route path="/admin/pages" element={<Pages />} />
         <Route path="/admin/settings" element={<Settings />} />
