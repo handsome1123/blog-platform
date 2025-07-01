@@ -11,7 +11,7 @@ export default function Home() {
   const [data, setData] = useState(null);
 
   useEffect(() => {
-    fetch('http://localhost:5000/api/homepage') // Replace with your backend API
+    fetch('https://blog-platform-lgg3.onrender.com/api/homepage') // Replace with your backend API
       .then((res) => res.json())
       .then(setData)
       .catch((err) => console.error('Failed to load homepage data', err));
