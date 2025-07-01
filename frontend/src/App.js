@@ -44,7 +44,6 @@ function App() {
 
 
         {/* Admin routes */}
-        {/* <Route path="/admin/dashboard" element={<ADashboard />} /> */}
         {/* <Route path="/admin/users" element={<Users />} /> */}
         {/* <Route path="/admin/pages" element={<Pages />} /> */}
         {/* <Route path="/admin/settings" element={<Settings />} /> */}
