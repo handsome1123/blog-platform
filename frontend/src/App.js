@@ -13,12 +13,12 @@ import Contact from "./pages/Contact";
 // import Home2 from "./pages/Home2";
 
 
-// import ADashboard from './pages/Admin/ADashboard';
+import ADashboard from './pages/Admin/ADashboard';
 // import Users from "./pages/Admin/Users";
 // import Pages from "./pages/Admin/Pages";
 // import Settings from "./pages/Admin/Settings"; 
-// import NewPost from "./pages/Admin/NewPost";
-// import Posts from "./pages/Admin/Posts";
+import NewPost from "./pages/Admin/NewPost";
+import Posts from "./pages/Admin/Posts";
 
 // import EditHomePage from "./pages/Admin/edit-home";
 // import EditAboutPage from "./pages/Admin/edit-about";
@@ -45,16 +45,16 @@ function App() {
 
 
         {/* Admin routes */}
-        {/* <Route path="/admin/dashboard" element={<ADashboard />} /> */}
+        <Route path="/admin/dashboard" element={<ADashboard />} />
         {/* <Route path="/admin/users" element={<Users />} /> */}
         {/* <Route path="/admin/pages" element={<Pages />} /> */}
         {/* <Route path="/admin/settings" element={<Settings />} /> */}
         {/* <Route path="/admin/logout" element={<AdminLogout />} /> */}
         
         {/* New Post route for admin */}
-        {/* <Route path="/admin/new-post" element={<NewPost />} /> */}
+        <Route path="/admin/new-post" element={<NewPost />} />
         {/* <Route path="/admin/edit-home" element={<EditHomePage />} /> */}
-        {/* <Route path="/admin/posts" element={<Posts />} /> */}
+        <Route path="/admin/posts" element={<Posts />} />
         {/* <Route path="/admin/edit-about" element={<EditAboutPage />} /> */}
         {/* <Route path="/admin/edit-blog" element={<EditBlogPage />} /> */}
         {/* <Route path="/admin/edit-vlog" element={<EditVlogPage />} />   */}

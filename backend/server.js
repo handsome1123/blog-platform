@@ -14,6 +14,8 @@ const allowedOrigins = [
 
 app.use(cors({ origin: allowedOrigins }));
 
+app.use(cors());
+
 app.use(express.json());
 // Serve uploaded images statically
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
