@@ -7,12 +7,21 @@ const path = require("path");
 
 
 const app = express();
-const allowedOrigins = [
-  'http://localhost:3000',
-  'https://cantwait2say.vercel.app',
-];
+const corsOptions = {
+  origin: (origin, callback) => {
+    // Allow requests with no origin (like mobile apps or curl requests)
+    if (!origin) return callback(null, true);
 
-app.use(cors({ origin: allowedOrigins }));
+    if (allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+  credentials: true, // if you send cookies/auth headers
+};
+
+app.use(cors(corsOptions));
 
 app.use(cors());
 
